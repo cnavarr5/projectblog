@@ -2,6 +2,7 @@ package com.example.projectblog;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -12,15 +13,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
-import android.widget.ViewFlipper;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentLogin.LoginInterface {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private RecyclerView recyclerView;
@@ -63,7 +64,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.login:
-                openLoginActivity();
+                if(recyclerView.getVisibility() == View.VISIBLE){
+                    loadLoginFragment();
+                } else {
+                    loadMainActivity();
+                }
                 return true;
             case R.id.createBlog:
                 Toast toast = Toast.makeText(this, "Creating new blog", Toast.LENGTH_SHORT);
@@ -75,6 +80,15 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void loadLoginFragment() {
+        recyclerView.setVisibility(View.GONE);
+        FragmentLogin login = new FragmentLogin();
+        fm.beginTransaction()
+                .add(R.id.root_fragment, login)
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override
@@ -89,11 +103,10 @@ public class MainActivity extends AppCompatActivity {
         adapter.stopListening();
     }
 
-    public void openLoginActivity() {
-        Context context = getApplicationContext();
-        Intent intent = new Intent(context, Login.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_TASK_ON_HOME);
-        context.startActivity(intent);
-    }
 
+    @Override
+    public void loadMainActivity() {
+        recyclerView.setVisibility(View.VISIBLE);
+        fm.popBackStackImmediate();
+    }
 }

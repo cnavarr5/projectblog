@@ -4,29 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/root_fragment">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
-    <ViewFlipper
-        android:id="@+id/LoginFlipper"
+    <android.support.v7.widget.RecyclerView
+        android:visibility="visible"
         android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/recycle_view" />
 
-        <include
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            layout="@layout/recycleview_activity" />
-
-        <include
-            android:id="@+id/login_activity"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            layout="@layout/activity_login" />
-
-    </ViewFlipper>
 
 </RelativeLayout>
