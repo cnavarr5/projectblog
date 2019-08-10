@@ -28,6 +28,7 @@
     <EditText
         android:id="@+id/titleText"
         android:ems="15"
+        android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/bodyText"
         android:layout_width="wrap_content"

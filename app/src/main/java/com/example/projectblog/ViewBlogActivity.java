@@ -2,6 +2,7 @@ package com.example.projectblog;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ public class ViewBlogActivity extends AppCompatActivity {
     public TextView bodyTV;
     public ImageView blogImageView;
 
+    public String blogger;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,8 @@ public class ViewBlogActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         titleTV.setText(extras.getString("title"));
         bodyTV.setText(extras.getString("body"));
+        blogger = extras.getString("blogger");
+        Log.d("test", blogger);
         Picasso.get().load(extras.getString("image")).resize(400, 400).into(blogImageView);
         extras.clear();
     }

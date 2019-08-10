@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -63,7 +64,8 @@ public class MainActivity extends AppCompatActivity
         adapter = new BlogAdapter(options);
 
         recyclerView = findViewById(R.id.recycle_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(adapter);
     }
 
@@ -158,6 +160,7 @@ public class MainActivity extends AppCompatActivity
                                 (String) doc.get("username"),
                                  doc.getId()
                         );
+                        Log.d("test", loggedInUser.toString());
                         toolbar.setTitle(loggedInUser.username);
                     }
                 } else {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,22 +11,32 @@
         layout="@layout/toolbar" />
 
     <ImageView
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
         android:id="@+id/ViewBlogImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="10dp"
         android:contentDescription="BlogImage"/>
 
     <TextView
         android:id="@+id/ViewBlogTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ViewBlogImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="32dp"
         android:text="Test Title"/>
+
     <TextView
         android:id="@+id/ViewBlogBody"
+        android:layout_below="@+id/ViewBlogTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
         android:textSize="16dp"
         android:text="lorem ipsum try thba gouda content"/>
 
-</LinearLayout>
+</RelativeLayout>

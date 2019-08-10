@@ -33,6 +33,7 @@ public class BlogAdapter extends FirestoreRecyclerAdapter<Blog, BlogAdapter.Blog
                 intent.putExtra("title", model.title);
                 intent.putExtra("body", model.body);
                 intent.putExtra("image", model.image);
+                intent.putExtra("blogger", model.blogger);
                 context.startActivity(intent);
             }
         });

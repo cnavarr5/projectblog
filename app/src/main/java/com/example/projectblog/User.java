@@ -18,4 +18,8 @@ public class User {
         this.username = username;
         this.uId = uId;
     }
+
+    public String toString(){
+        return "uid: " + uId + ", fireId: " + fireId;
+    }
 }

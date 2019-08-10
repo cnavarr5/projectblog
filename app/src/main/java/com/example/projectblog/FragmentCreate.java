@@ -134,7 +134,7 @@ public class FragmentCreate extends Fragment {
         blog.put("title", title);
         blog.put("body", body);
         blog.put("image", uploadPath.toString());
-        blog.put("blogger", user.uId);
+        blog.put("blogger", user.fireId);
 
         blogs.add(blog)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
