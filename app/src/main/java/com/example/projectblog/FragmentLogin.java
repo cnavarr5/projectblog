@@ -69,12 +69,10 @@ public class FragmentLogin extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            Log.d("test", "Successfully Signed in");
                             FirebaseUser user = mAuth.getCurrentUser();
                             mCallBack.loadMainActivityWithUser(user.getUid());
                         } else {
-                            Log.d("test", "Failed to Sign in");
-                            Toast toast = Toast.makeText(getContext(), "Authentication Failed", Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(getContext(), getString(R.string.aut_failed), Toast.LENGTH_SHORT);
                             toast.show();
                         }
                     }

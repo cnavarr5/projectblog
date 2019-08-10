@@ -23,7 +23,7 @@
         android:id="@+id/selectImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Image" />
+        android:text="@string/select_image_btn" />
 
     <EditText
         android:id="@+id/titleText"
@@ -33,7 +33,7 @@
         android:layout_above="@+id/bodyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Title"/>
+        android:hint="@string/title_hint"/>
 
     <EditText
         android:id="@+id/bodyText"
@@ -42,7 +42,7 @@
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
         android:ems="15"
-        android:hint="Body" />
+        android:hint="@string/body_hint" />
 
     <Button
         android:layout_centerHorizontal="true"
@@ -51,6 +51,6 @@
         android:id="@+id/uploadToFirebase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upload" />
+        android:text="@string/upload_btn" />
 
 </RelativeLayout>

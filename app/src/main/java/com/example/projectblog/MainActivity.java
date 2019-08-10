@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.createBlog:
                 if(recyclerView.getVisibility() == View.VISIBLE){
                     if(loggedInUser == null){
-                        Toast toast = Toast.makeText(this, "You Must be signed in", Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(this, getString(R.string.sign_in), Toast.LENGTH_SHORT);
                         toast.show();
                     } else {
                         loadCreatePostFragment(loggedInUser);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 return true;
             case R.id.settings:
-                Toast t2 = Toast.makeText(this, "Settings menu coming soon", Toast.LENGTH_SHORT);
+                Toast t2 = Toast.makeText(this, getString(R.string.settings), Toast.LENGTH_SHORT);
                 t2.show();
                 return true;
         }
@@ -160,7 +160,6 @@ public class MainActivity extends AppCompatActivity
                                 (String) doc.get("username"),
                                  doc.getId()
                         );
-                        Log.d("test", loggedInUser.toString());
                         toolbar.setTitle(loggedInUser.username);
                     }
                 } else {

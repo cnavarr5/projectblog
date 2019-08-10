@@ -4,4 +4,18 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">Login</string>
+    <string name="uploaded">Uploaded</string>
+    <string name="failed">Failed</string>
+    <string name="aut_failed">Authentication Failed</string>
+    <string name="sign_in">You Must be signed in</string>
+    <string name="settings">Settings menu coming soon</string>
+    <string name="password_hint">Password</string>
+    <string name="email_hint">Email</string>
+    <string name="username_hint">Username</string>
+    <string name="login_button">Login</string>
+    <string name="sign_up_button">Sign up</string>
+    <string name="select_image_btn">Select Image</string>
+    <string name="title_hint">Title</string>
+    <string name="body_hint">Body</string>
+    <string name="upload_btn">Upload</string>
 </resources>

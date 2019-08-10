@@ -16,8 +16,7 @@
         android:id="@+id/ViewBlogImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="10dp"
-        android:contentDescription="BlogImage"/>
+        android:elevation="10dp" />
 
     <TextView
         android:id="@+id/ViewBlogTitle"
@@ -25,8 +24,7 @@
         android:layout_below="@+id/ViewBlogImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="32dp"
-        android:text="Test Title"/>
+        android:textSize="32dp" />
 
     <TextView
         android:id="@+id/ViewBlogBody"
@@ -36,7 +34,6 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
-        android:textSize="16dp"
-        android:text="lorem ipsum try thba gouda content"/>
+        android:textSize="16dp" />
 
 </RelativeLayout>

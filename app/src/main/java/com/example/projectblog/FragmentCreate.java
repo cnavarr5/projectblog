@@ -140,7 +140,6 @@ public class FragmentCreate extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Log.d("test", "Uploaded successfully");
                         mCallBack.home(user.uId);
                     }
                 })
@@ -161,7 +160,7 @@ public class FragmentCreate extends Fragment {
                         ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
-                                Toast.makeText(getContext(), "Uploaded", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), getString(R.string.uploaded), Toast.LENGTH_SHORT).show();
                                 uploadPath = uri;
                                 uploadDataToFirestore(title.getText().toString(), body.getText().toString());
                             }
@@ -171,7 +170,7 @@ public class FragmentCreate extends Fragment {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "Failed "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), getString(R.string.failed) +e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
